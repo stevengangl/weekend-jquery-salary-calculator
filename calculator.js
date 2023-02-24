@@ -38,19 +38,19 @@ function addEmployeeInfo() {
 }
 
 function render() {
-$('#employeeInfoForm').empty();
+ $("#loggedInfo").empty();
 //im trying to reset my form after i click the button
 for(let people of employees){
     // trying to update the dom with the submitted info
-    $('#employeeInfoForm').append(`
+    $('#loggedInfo').append(`
  
     <tr>
-        <th>${people.first}</th>
-        <th>${people.last}</th>
-        <th>${people.ID}</th>
-        <th>${people.title}</th>
-        <th>${people.salary}</th>
-        <button id ='deleteBtn'>Delete</button>people
+        <td>${people.first}</td>
+        <td>${people.last}</td>
+        <td>${people.ID}</td>
+        <td>${people.title}</td>
+        <td>${people.salary}</td>
+        <button id='deleteBtn'>Delete</button>
     </tr>
     
    
