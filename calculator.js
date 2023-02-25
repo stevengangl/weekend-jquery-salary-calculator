@@ -3,10 +3,18 @@ $(document).ready(readyNow);
 let employees = [];
 let employeeSalary = 0;
 
+// KEY
+// 🟢 = comments on what is confusing
+// 🔴 problem areas within my code
+// 🔵 fixed problem area
+// ⭐️ Functions
+
+
+
 // ⭐️TODO⭐️
 //1️⃣ clear the input fields✅
 //2️⃣ calculate monthly costs✅
-//3️⃣ append monthly costs to the dom at below the table
+//3️⃣ append monthly costs to the dom at below the table✅
 //4️⃣ If totalMonthlyCost > $20,000, add red background to the total monthly cost.
 //5️⃣ Create a delete button that removes an employee from the DOM
 //6️⃣ Fix stuff on DOM so it has correct Data
@@ -55,10 +63,11 @@ function addEmployeeInfo() {
 
     console.log(' employee array ', employees);
     //render puts the info onto the DOM
-    render();//🔴info is adding itself plus 1 everytime🔴need to fix
     // than this resets the input form
+    //🔵I had render above the other functions so it wasnt working🔵
     resetInputField();
     totalMonthlyCost();
+    render();//🔴this was in the wrong spot but it works now!!
 }
 //⭐️
 function resetInputField() {
@@ -78,7 +87,8 @@ function totalMonthlyCost(){
     //checking to see if the function is grabbing the salary
     //the index is because this object is in the global array
     console.log('checking salary of employee array', employees[0].employeeId);//🟢I needed help on this, i didnt realize i needed to access the index
-// 🌝the property "employeeSalary" of the object "employeeInfo" 🌝  is what i need to target to get the salary, 
+
+// the property "employeeSalary" of the object "employeeInfo"   is what i need to target to get the salary, 
 //made a variable named employeeSalary
 //that variable stores the salary by accessing its property within the object
 
@@ -112,6 +122,8 @@ function render() {
              </button>
          </td>
     </tr>
-    `)
-    }
+    `);
+    };
+    //🔴the DOM is not rendering this correctly, its 1 behind
+    $("#employeeMonthlyCost").html(`total monthly costs <p>${employeeSalary}</p>`);
 }
