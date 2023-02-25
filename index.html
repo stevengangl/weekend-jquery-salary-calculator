@@ -5,35 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src = 'jquery.js'></script>
-    <script src="calculator.js"></script>
+    <script src = 'calculator.js'></script>
     <link rel="stylesheet" href="hello.css">
-    <title>Document</title>
+    <title>Weekend Assignment</title>
 </head>
 <body>
     <h1>Salary Calculator</h1>
-<!-- this is a static html div to hold some input forms-->
-    <div id ='monthlyCostForm'>
-        <h2>ADD EMPLOYEE</h2>
-        <input placeholder="First Name" id="firstNameInput" type="text">
-        <input placeholder="Last Name" id="lastNameInput" type="text">
-        <input placeholder="ID" id="idInput" type="text">
-        <input placeholder="Title" id="titleInput" type="text">
-        <input placeholder="Annual Salary" id="salaryInput" type="number">
-<button id="submitEmployeeInfoBtn">SUBMIT</button>
-    </div>
-<!-- I need a table to organize this into-->
-<table id='employeeInfoForm'>
-    <!--trying to get the employee info into here on the dom-->
-  <tr>
-    <th>First Name</th>
-    <th>Last Name</th>
-    <th>ID</th>
-    <th>Title</th>
-    <th>Salary</th>
-  </tr>
-  <tr id="loggedInfo">
+    <!-- need a form with 5 input fields and a submot button
+    Firstname - text
+    Lastname- text
+    id - number
+    title- text
+    annual salary- number
+     -->
+<div id="employeeInfoForm">
+    <h2>Add Employee</h2>
 
-  </tr>
+    <input placeholder="First Name" id="firstNameInput" type="text">
+    <input placeholder="Last Name" id="lastNameInput" type="text">
+    <input placeholder="ID" id="idInput" type="number">
+    <input placeholder="Title" id="titleInput" type="text">
+    <input placeholder="Salary" id="salaryInput" type="number">
+
+    <button id="submitInfoBtn">submit</button>
+</div>
+
+<h2>Employees</h2>
+<!-- this will be the table to store the input info-->
+<table id="employeeInfoTable">
+<tr>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>ID</td>
+    <td>Title</td>
+    <td>Annual Salary</td>
+    <td></td>
+</tr>
 </table>
+
 </body>
 </html>

@@ -1,59 +1,69 @@
 $(document).ready(readyNow);
-//variables will be stores
-let monthlyCost = [];
+
 let employees = [];
 
-//add Readynow() 
-function readyNow() {
-    console.log('DOM is loaded')
-    // add a listener for the "submitEmployeeInfoBtn" button
-    $("#submitEmployeeInfoBtn").on('click', addEmployeeInfo)
+
+function readyNow(){
+    console.log('dom is loaded')
+// need to add click event that calls a function()
+// need to make a function to add the info 
+// also need a listener for when the button is clicked 
+$("#submitInfoBtn").on('click', addEmployeeInfo) 
+
+}
+// function to grab info from input fields 
+// function needs to add new info onto the DOM
+function addEmployeeInfo(){
+    console.log('inside of addEmployeeInfo()');
+
+// Have to make variables to get the input info
+const firstName = $("#firstNameInput").val();
+const lastName = $("#lastNameInput").val();
+const id =$("#idInput").val();
+const title = $("#titleInput").val();
+const salary =$('#salaryInput').val();
+//console log the info to make sure it works correctly
+// console.log(`
+// Input Info: 
+// First Name: ${firstName}
+// Last Name: ${lastName}
+// ID #: ${id}
+// Title: ${title}
+// Salary: ${salary}
+// `);
+
+let employeeInfo = {
+    employeeFirstName: firstName,
+    employeeLastName: lastName,
+    employeeId: id,
+    employeeTitle: title,
+    employeeSalary: salary
+};
+
+employees.push(employeeInfo);
+
+console.log(' employee array ',employees);
+render();
+
 }
 
-function addEmployeeInfo() {
-    console.log('in employeeInfo()')
-    const firstNameInputValue = $("#firstNameInput").val();
-    const lastNameInputValue = $("#lastNameInput").val();
-    const idInputValue = $("#idInput").val();
-    const titleInputValue = $("#titleInput").val();
-    const salaryInputValue = $("#salaryInput").val();
-    console.log(`
-    First Name:${firstNameInputValue}
-    Last Name:${lastNameInputValue}
-    ID:${idInputValue}
-    Title:${titleInputValue}
-    Salary:${salaryInputValue}
-    `);
-    const employeeInfo = {
-        first: firstNameInputValue,
-        last: lastNameInputValue,
-        ID: idInputValue,
-        title: titleInputValue,
-        salary: salaryInputValue
-    };
-    employees.push(employeeInfo);
-    console.log('stuff in employees', employeeInfo)
-
-    render();
-}
-
-function render() {
- $("#loggedInfo").empty();
-//im trying to reset my form after i click the button
-for(let people of employees){
-    // trying to update the dom with the submitted info
-    $('#loggedInfo').append(`
- 
+function render(){
+    for(let info of employees){
+        console.log('individual info', info)
+    // need to append the info to the DOM
+    $("#employeeInfoTable").append(`
     <tr>
-        <td>${people.first}</td>
-        <td>${people.last}</td>
-        <td>${people.ID}</td>
-        <td>${people.title}</td>
-        <td>${people.salary}</td>
-        <button id='deleteBtn'>Delete</button>
+        <td>${info.employeeFirstName}</td>
+        <td>${info.employeeLastName}</td>
+        <td>${info.employeeId}</td>
+        <td>${info.employeeId}</td>
+        <td>${info.employeeSalary}</td>
+        <td>
+             <button class ='deleteBtn'>
+                 Delete
+             </button>
+         </td>
     </tr>
-    
-   
     `)
-}
+    }
 }
