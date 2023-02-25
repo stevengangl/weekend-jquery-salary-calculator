@@ -1,10 +1,11 @@
 $(document).ready(readyNow);
 
 let employees = [];
+let employeeSalary = 0;
 
 // ⭐️TODO⭐️
-//1️⃣ clear the input fields
-//2️⃣ calculate monthly costs
+//1️⃣ clear the input fields✅
+//2️⃣ calculate monthly costs✅
 //3️⃣ append monthly costs to the dom at below the table
 //4️⃣ If totalMonthlyCost > $20,000, add red background to the total monthly cost.
 //5️⃣ Create a delete button that removes an employee from the DOM
@@ -17,7 +18,7 @@ function readyNow() {
     // need to add click event that calls a function()
     // need to make a function to add the info 
     // also need a listener for when the button is clicked 
-    $("#submitInfoBtn").on('click', addEmployeeInfo)
+    $("#submitInfoBtn").on('click', addEmployeeInfo) 
 
 }
 // function to grab info from input fields 
@@ -54,9 +55,10 @@ function addEmployeeInfo() {
 
     console.log(' employee array ', employees);
     //render puts the info onto the DOM
-    render();
+    render();//🔴info is adding itself plus 1 everytime🔴need to fix
     // than this resets the input form
     resetInputField();
+    totalMonthlyCost();
 }
 //⭐️
 function resetInputField() {
@@ -67,6 +69,27 @@ function resetInputField() {
     $("#idInput").val('');
     $("#titleInput").val('');
     $('#salaryInput').val('');
+}
+
+//⭐️
+function totalMonthlyCost(){
+    console.log('in totalMonthlyCost()');
+    console.log('this is the employee array:', employees);
+    //checking to see if the function is grabbing the salary
+    //the index is because this object is in the global array
+    console.log('checking salary of employee array', employees[0].employeeId);//🟢I needed help on this, i didnt realize i needed to access the index
+// 🌝the property "employeeSalary" of the object "employeeInfo" 🌝  is what i need to target to get the salary, 
+//made a variable named employeeSalary
+//that variable stores the salary by accessing its property within the object
+
+//🟢this for loop took me about 1 hour to figure out...
+let variableA = 0;           // 🟢I dont have a good grasp on this  for loop concept
+                              //🟢 Ive had to get alot of help to work through this
+for(let salary of employees){ // 🟢I didnt know I needed to add a new variable
+    variableA +=  1 * salary.employeeSalary
+}
+employeeSalary = variableA;
+console.log('employee salary:',employeeSalary);
 }
 
 //⭐️
