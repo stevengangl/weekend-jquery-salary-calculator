@@ -49,7 +49,7 @@ for( let person of employees){
 }
 employees = newPosts;
 
-    //totalMonthlyCost()
+    totalMonthlyCost()
     render()
 
 }
@@ -163,5 +163,7 @@ function render() {
 
     if (employeeSalary  >= 20000) {
         $('#employeeMonthlyCost').addClass('red');
+    }else{
+        $('#employeeMonthlyCost').removeClass('red');
     }
 }

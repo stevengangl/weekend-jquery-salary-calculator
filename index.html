@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src = 'jquery.js'></script>
-    <script src = 'calculator.js'></script>
+    <script src='jquery.js'></script>
+    <script src='calculator.js'></script>
     <link rel="stylesheet" href="hello.css">
     <title>Weekend Assignment</title>
 </head>
+
 <body>
     <h1>Salary Calculator</h1>
     <!-- need a form with 5 input fields and a submot button
@@ -18,30 +20,35 @@
     title- text
     annual salary- number
      -->
-<div id="employeeInfoForm">
-    <h2>Add Employee</h2>
+    <div id="employeeInfoForm">
+        <h2>Add Employee</h2>
 
-    <input placeholder="First Name" id="firstNameInput" type="text">
-    <input placeholder="Last Name" id="lastNameInput" type="text">
-    <input placeholder="ID" id="idInput" type="number">
-    <input placeholder="Title" id="titleInput" type="text">
-    <input placeholder="Salary" id="salaryInput" type="number">
+        <input placeholder="First Name" id="firstNameInput" type="text">
+        <input placeholder="Last Name" id="lastNameInput" type="text">
+        <input placeholder="ID" id="idInput" type="number">
+        <input placeholder="Title" id="titleInput" type="text">
+        <input placeholder="Salary" id="salaryInput" type="number">
 
-    <button id="submitInfoBtn">submit</button>
-</div>
+        <button id="submitInfoBtn">submit</button>
+    </div>
 
-<h2>Employees</h2>
-<!-- this will be the table to store the input info-->
-<table id="employeeInfoTable">
-<tr>
-    <td>First Name</td>
-    <td>Last Name</td>
-    <td>ID</td>
-    <td>Title</td>
-    <td>Annual Salary</td>
-    <td></td>
-</tr>
-</table>
-<p id="employeeMonthlyCost">Total Monthly Cost:</p>
+    <h2>Employees</h2>
+    <!-- this will be the table to store the input info-->
+    <table >
+        <thead>
+            <tr>
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>ID</td>
+                <td>Title</td>
+                <td>Annual Salary</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody id="employeeInfoTable"></tbody>
+
+    </table>
+    <p id="employeeMonthlyCost">Total Monthly Cost:</p>
 </body>
+
 </html>
